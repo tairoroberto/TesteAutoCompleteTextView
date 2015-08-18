@@ -1,5 +1,7 @@
 package br.com.trmasolucoes.testeautocompletetextview.connection;
 
+import android.util.Log;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +41,10 @@ public class HttpConnection {
 		catch(NullPointerException e){ e.printStackTrace(); }
 		catch(ClientProtocolException e){ e.printStackTrace(); }
 		catch(IOException e){ e.printStackTrace(); }
+
+        Log.i("Script", "estado" + serverAnswer);
 		return(getStateListJson(serverAnswer));
+
 	}
 	
 	

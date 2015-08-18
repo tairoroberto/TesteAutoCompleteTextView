@@ -14,7 +14,9 @@ import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import br.com.trmasolucoes.testeautocompletetextview.MainActivity;
 import br.com.trmasolucoes.testeautocompletetextview.R;
+import br.com.trmasolucoes.testeautocompletetextview.connection.HttpConnection;
 import br.com.trmasolucoes.testeautocompletetextview.domain.State;
 
 public class AutoCompleteAdapter extends ArrayAdapter<State> implements Filterable {
@@ -101,7 +103,7 @@ public class AutoCompleteAdapter extends ArrayAdapter<State> implements Filterab
 					int qtdConstraint = constraintString.length();
 					
 					//((MainActivity) context).id = 1;
-					//ArrayList<State> newValues = (ArrayList<State>) HttpConnection.getStateListWeb("http://www.villopim.com.br/android/state.php", country, constraintString);
+					//ArrayList<State> newValues = (ArrayList<State>) HttpConnection.getStateListWeb("http://trmasolucoes.com.br/teste-autocompletetextview", country, constraintString);
 					
 					ArrayList<State> newValues = new ArrayList<State>(listFull.size());
 					for (int i = 0; i < listFull.size(); i++) {
@@ -118,13 +120,12 @@ public class AutoCompleteAdapter extends ArrayAdapter<State> implements Filterab
 						item = item.replaceAll("[úù]", "u");
 						item = item.replaceAll("[ÚÙ]", "U");
 						item = item.toLowerCase();
-						
+
 						if(item.substring(0, qtdConstraint).equalsIgnoreCase(constraintString)
 							|| listFull.get(i).getName().toLowerCase().substring(0, qtdConstraint).equalsIgnoreCase(constraintString)){
 							newValues.add(listFull.get(i));
 						}
 					}
-					
 					results.count = newValues.size();
 					results.values = newValues;
 				}
