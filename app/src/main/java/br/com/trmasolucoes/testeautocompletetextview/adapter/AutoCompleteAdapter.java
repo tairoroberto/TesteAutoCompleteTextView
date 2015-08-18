@@ -106,17 +106,17 @@ public class AutoCompleteAdapter extends ArrayAdapter<State> implements Filterab
 					ArrayList<State> newValues = new ArrayList<State>(listFull.size());
 					for (int i = 0; i < listFull.size(); i++) {
 						String item = listFull.get(i).getName();
-						item = item.replaceAll("[��]", "c");
-						item = item.replaceAll("[�����]", "a");
-						item = item.replaceAll("[�����]", "A");
-						item = item.replaceAll("[����]", "e");
-						item = item.replaceAll("[����]", "E");
-						item = item.replaceAll("[����]", "i");
-						item = item.replaceAll("[����]", "I");
-						item = item.replaceAll("[�����]", "o");
-						item = item.replaceAll("[�����]", "O");
-						item = item.replaceAll("[����]", "u");
-						item = item.replaceAll("[����]", "U");
+						item = item.replaceAll("[ç]", "c");
+						item = item.replaceAll("[áàãâ]", "a");
+						item = item.replaceAll("[ÁÀÃÂ]", "A");
+						item = item.replaceAll("[éèê]", "e");
+						item = item.replaceAll("[ÈÉÊ]", "E");
+						item = item.replaceAll("[íì]", "i");
+						item = item.replaceAll("[Íì]", "I");
+						item = item.replaceAll("[óòôõ]", "o");
+						item = item.replaceAll("[ÓÒÔÕ]", "O");
+						item = item.replaceAll("[úù]", "u");
+						item = item.replaceAll("[ÚÙ]", "U");
 						item = item.toLowerCase();
 						
 						if(item.substring(0, qtdConstraint).equalsIgnoreCase(constraintString)
